@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Taxi Booking System</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/book_taxi">Book Taxi</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section id="bookings">
+            <h2>Your Taxi Bookings</h2>
+            <div class="booking-list">
+                {% for booking in bookings %}
+                <div class="booking">
+                    <p>Date: {{ booking.date.strftime('%Y-%m-%d') }}</p>
+                    <p>Time: {{ booking.time.strftime('%H:%M') }}</p>
+                    <p>Pickup Location: {{ booking.pickup_location }}</p>
+                    <p>Dropoff Location: {{ booking.dropoff_location }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Taxi Booking System</p>
+    </footer>
+</body>
+</html>
