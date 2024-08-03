@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Taxi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Book Taxi</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section id="book-taxi">
+            <h2>Book a Taxi</h2>
+            <form action="{{ url_for('book_taxi') }}" method="POST">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <label for="pickup_location">Pickup Location:</label>
+                <input type="text" id="pickup_location" name="pickup_location" required>
+                <label for="dropoff_location">Dropoff Location:</label>
+                <input type="text" id="dropoff_location" name="dropoff_location" required>
+                <button type="submit">Book Taxi</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Taxi Booking System</p>
+    </footer>
+</body>
+</html>
